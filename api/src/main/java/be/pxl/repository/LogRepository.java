@@ -1,9 +1,10 @@
 package be.pxl.repository;
 
-import be.pxl.entity.User;
+import be.pxl.entity.logging.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String> {
+public interface LogRepository extends JpaRepository<Log, Integer> {
 }
+

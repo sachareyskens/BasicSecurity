@@ -80,6 +80,14 @@
           <element id="library" level="project" name="Maven: org.webjars:webjars-locator-core:0.30" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.9" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jms:5.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.activemq:activemq-broker:5.14.1" />
+          <element id="library" level="project" name="Maven: org.apache.activemq:activemq-client:5.13.4" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" />
+          <element id="library" level="project" name="Maven: org.fusesource.hawtbuf:hawtbuf:1.11" />
+          <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.activemq:activemq-openwire-legacy:5.13.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
