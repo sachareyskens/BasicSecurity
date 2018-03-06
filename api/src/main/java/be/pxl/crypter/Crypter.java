@@ -1,7 +1,6 @@
 package be.pxl.crypter;
 
 import be.pxl.entity.Message;
-import be.pxl.entity.User;
 import be.pxl.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,12 +8,8 @@ import org.springframework.stereotype.Component;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.security.*;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class Crypter {
@@ -31,11 +26,11 @@ public class Crypter {
         try {
             createAESKey();
         } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
+
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+
         } catch (InvalidKeyException e) {
-            e.printStackTrace();
+
         }
     }
 
@@ -79,23 +74,23 @@ public class Crypter {
             message.setSignature(cipherText);
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         } catch (InvalidKeyException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         } catch (BadPaddingException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error encrypting. Contact provider");
         }
 
         return message;
@@ -107,7 +102,7 @@ public class Crypter {
 
 
         try {
-            KeyPair recieverPair = kpg.createKeyPair(service.find(message.getReceiver()).getPrivKey(), service.find(username).getPubKey());
+            KeyPair recieverPair = kpg.createKeyPair(service.find(username).getPrivKey(), service.find(username).getPubKey());
             KeyPair senderPair = kpg.createKeyPair(service.find(message.getSender()).getPrivKey(), service.find(message.getSender()).getPubKey());
 
             // decrypt AES key
@@ -137,28 +132,28 @@ public class Crypter {
             }
             message.setMessage(new String(plainText));
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         } catch (InvalidKeyException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         } catch (BadPaddingException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
 //        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
+//
         } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         }catch (NullPointerException e) {
-            e.printStackTrace();
-            message.setValidation("Error encrypting/decrypting. Contact provider");
+
+            message.setValidation("Error decrypting. Contact provider");
         }
         return message;
     }

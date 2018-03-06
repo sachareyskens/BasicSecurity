@@ -3,12 +3,7 @@ package be.pxl.crypter;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
-import javax.xml.bind.DatatypeConverter;
-import java.math.BigInteger;
 import java.security.*;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.security.interfaces.RSAPublicKey;
 import java.security.spec.EncodedKeySpec;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
