@@ -2,6 +2,7 @@ package be.pxl.controller;
 
 import be.pxl.crypter.Crypter;
 import be.pxl.crypter.KeyPairGenerator;
+import be.pxl.entity.StatsSource;
 import be.pxl.entity.User;
 import be.pxl.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,8 @@ public class UserController {
 
     @RequestMapping(value ="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Object addUser(@RequestBody User user) throws NoSuchAlgorithmException {
+    public ResponseEntity<Boolean> addUser(@RequestBody User user) throws NoSuchAlgorithmException {
+        HttpStatus status = HttpStatus.OK;
         if (service.find(user.getUsername()) == null ) {
             user.setPassword(encoder.encode(user.getPassword()));
             KeyPairGenerator kpg = new KeyPairGenerator();
@@ -55,9 +57,9 @@ public class UserController {
             user.setPubKey(kp.getPublic().getEncoded());
             user.setPrivKey(kp.getPrivate().getEncoded());
             service.persist(user);
-            return user;
+            return new ResponseEntity<Boolean>(true, status);
         } else {
-            return false;
+            return new ResponseEntity<Boolean>(false, status);
         }
 
     }
@@ -67,44 +69,50 @@ public class UserController {
 
     @RequestMapping(value="/login", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
-    public Object validateUser(@RequestParam(value="username") String username, @RequestParam(value = "password") String rawPassword) {
+    public ResponseEntity<String> validateUser(@RequestParam(value="username") String username, @RequestParam(value = "password") String rawPassword) {
+        HttpStatus status = HttpStatus.OK;
         User user = service.find(username);
         if (user == null) {
-            return false;
+            return new ResponseEntity<String>("false", status);
         } else {
-            if (encoder.matches(rawPassword, user.getPassword()) && user.getAccesToken().isEmpty()) {
+            if (encoder.matches(rawPassword, user.getPassword()) && user.getAccesToken() == null) {
                 String accesstoken = UUID.randomUUID().toString();
                 user.setAccesToken(accesstoken);
                 service.update(user);
                 user.setPassword("HIDDEN");
-                return user;
+                return new ResponseEntity<String>(accesstoken, status);
             } else {
-                return false;
+                return new ResponseEntity<String>("false", status);
             }
         }
     }
     @RequestMapping(value="/validatetoken", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
-    public Boolean validateToken(@RequestParam(value="token") String token) {
+    public ResponseEntity<Boolean> validateToken(@RequestParam(value="token") String token) {
+        HttpStatus status = HttpStatus.OK;
         User user = service.findLoggedIn(token);
         if (user != null) {
-            if (user.getAccesToken().equals(token)) {
-                return true;
+            if (token.equals(user.getAccesToken())) {
+                return new ResponseEntity<Boolean>(true, status);
             } else {
-                return false;
+                return new ResponseEntity<Boolean>(false, status);
             }
         } else {
-            return false;
+            return new ResponseEntity<Boolean>(false, status);
         }
     }
 
     @RequestMapping(value="/logout", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
-    public void logoutUser(@RequestParam(value="username") String username) {
+    public boolean logoutUser(@RequestParam(value="username") String username) {
         User user = service.find(username);
         user.setAccesToken("");
         service.update(user);
+        return true;
     }
 
-
+    @RequestMapping(value="/names", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
+    public List<String> findAllNames() {
+        return service.getAllNames();
+    }
 }

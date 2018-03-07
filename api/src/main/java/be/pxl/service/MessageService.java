@@ -41,4 +41,9 @@ public class MessageService implements IMessageService{
     public List<Message> findByUsername(String username) {
         return repo.findByUsername(username);
     }
+
+    @Override
+    public int countAll() {
+        return repo.countAll();
+    }
 }

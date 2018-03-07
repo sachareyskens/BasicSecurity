@@ -2,6 +2,7 @@ package be.pxl.controller;
 
 import be.pxl.crypter.Crypter;
 import be.pxl.entity.Message;
+import be.pxl.entity.StatsSource;
 import be.pxl.entity.User;
 import be.pxl.service.IMessageService;
 import be.pxl.service.IUserService;
@@ -20,6 +21,8 @@ import java.util.List;
 public class MessageController {
     @Autowired
     private IMessageService service;
+    @Autowired
+    private IUserService userService;
     @Autowired
     Crypter crypter;
 
@@ -76,7 +79,14 @@ public class MessageController {
         return service.findByUsername(username);
     }
 
-
+    @RequestMapping(value="/countAll", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
+    public ResponseEntity<StatsSource> getCounts() {
+        HttpStatus status = HttpStatus.OK;
+        StatsSource statsSource = new StatsSource();
+        statsSource.setTotalUsers("Total users : " + userService.countAll());
+        statsSource.setTotalMessages("Total messages : " + service.countAll());
+        return new ResponseEntity<>(statsSource, status);
+    }
 
 
 }

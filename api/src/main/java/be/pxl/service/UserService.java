@@ -39,4 +39,14 @@ public class UserService implements IUserService {
     public User findLoggedIn(String token) {
         return repo.findLoggedIn(token);
     }
+
+    @Override
+    public int countAll() {
+        return repo.countAll();
+    }
+
+    @Override
+    public List<String> getAllNames() {
+        return repo.getAllNames();
+    }
 }

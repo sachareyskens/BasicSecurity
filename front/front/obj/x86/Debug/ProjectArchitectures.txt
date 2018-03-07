@@ -1,0 +1,5 @@
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Domain\Domain.csproj;x86
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Domain\Domain.csproj;x86
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\front.csproj;x86
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Repository\Repository.csproj;x86
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Service\Service.csproj;x86

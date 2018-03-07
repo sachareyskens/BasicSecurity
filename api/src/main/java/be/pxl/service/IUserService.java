@@ -13,5 +13,8 @@ public interface IUserService {
     void update(User user);
     void delete(String id);
     User findLoggedIn(String token);
+    int countAll();
+
+    List<String> getAllNames();
 
 }

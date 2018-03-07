@@ -12,4 +12,7 @@ import java.util.List;
 public interface MessageRepository extends JpaRepository<Message, Integer> {
     @Query("from Message m where m.reciever =:username")
     List<Message> findByUsername(@Param("username") String username);
+
+    @Query("select count(*) from Message m")
+    Integer countAll();
 }
