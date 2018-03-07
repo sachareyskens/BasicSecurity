@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
-    @Query("from User u where where u.accesstoken =:accesstoken")
+    @Query("from User u where u.accesstoken =:accesstoken")
     User findLoggedIn(@Param("accesstoken") String accesstoken);
 }

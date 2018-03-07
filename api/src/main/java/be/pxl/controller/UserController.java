@@ -72,7 +72,7 @@ public class UserController {
         if (user == null) {
             return false;
         } else {
-            if (encoder.matches(rawPassword, user.getPassword())) {
+            if (encoder.matches(rawPassword, user.getPassword()) && user.getAccesToken().isEmpty()) {
                 String accesstoken = UUID.randomUUID().toString();
                 user.setAccesToken(accesstoken);
                 service.update(user);

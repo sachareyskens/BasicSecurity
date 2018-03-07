@@ -59,12 +59,21 @@ public class MessageController {
     @RequestMapping(value= "/decrypt/{id}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public ResponseEntity<Message> decrypt(@PathVariable("id") int key, @RequestParam("loggedIn") String username) {
         HttpStatus status = HttpStatus.OK;
-        Message message = service.find(key);
-        Message messagee = crypter.decryptMessage(message, username);
-        byte[] hidden =new byte[1];
-        messagee.setEncryptedSymm(hidden);
-        return new ResponseEntity<Message>(messagee, status);
+        try {
+            Message message = service.find(key);
+            Message messagee = crypter.decryptMessage(message, username);
+            byte[] hidden = new byte[1];
+            messagee.setEncryptedSymm(hidden);
+            service.delete(messagee.getId());
+            return new ResponseEntity<>(messagee, status);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new Message(), HttpStatus.NOT_FOUND);
+        }
 
+    }
+    @RequestMapping(value= "/showall}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
+    public List<Message> showAllByUsername(@RequestParam("username") String username) {
+        return service.findByUsername(username);
     }
 
 

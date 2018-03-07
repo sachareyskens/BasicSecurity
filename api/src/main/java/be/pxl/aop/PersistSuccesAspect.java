@@ -17,7 +17,7 @@ public class PersistSuccesAspect {
 
     @After("execution(* *.decryptMessage(..)) && args(message, username)")
     public void decryptMessage(Message message, String username) {
-        logger.log("Decrypted Message: " + message.getId() + " || User: " + username);
+        logger.log("Decrypted Message: " + message.getId() + " || Reciever: " + username);
     }
 
     @After("execution(* *.encryptMessage(..)) && args(message)")
