@@ -85,8 +85,8 @@ public class UserController {
     }
     @RequestMapping(value="/validatetoken", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
-    public Boolean validateToken(@RequestParam(value="username") String username, @RequestParam(value="token") String token) {
-        User user = service.find(username);
+    public Boolean validateToken(@RequestParam(value="token") String token) {
+        User user = service.findLoggedIn(token);
         if (user != null) {
             if (user.getAccesToken().equals(token)) {
                 return true;

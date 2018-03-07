@@ -34,4 +34,9 @@ public class UserService implements IUserService {
     public void delete(String id) {
         repo.delete(id);
     }
+
+    @Override
+    public User findLoggedIn(String token) {
+        return repo.findLoggedIn(token);
+    }
 }

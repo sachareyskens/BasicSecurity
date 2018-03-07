@@ -12,5 +12,6 @@ public interface IUserService {
     void persist(User user);
     void update(User user);
     void delete(String id);
+    User findLoggedIn(String token);
 
 }
