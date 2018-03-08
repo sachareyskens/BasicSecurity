@@ -19,7 +19,7 @@
     <Grid Background="LightGray">
         <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
             <Grid VerticalAlignment="Top" x:Name="titleGrid">
-                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Margin="100, 10, 0, 10" Foreground="White"> Drivers</TextBlock>
+                <TextBlock Style="{StaticResource HeaderTextBlockStyle}" Margin="100, 10, 0, 10" Foreground="White"> Messages</TextBlock>
             </Grid>
             <ListView ItemsSource="{Binding Messages}" SelectedItem="{Binding SelectedMessage, Mode=TwoWay}" Background="White" BorderBrush="Black" Margin="20,20,20,20" BorderThickness="2" MaxHeight="400">
                 <ListView.ItemTemplate>
