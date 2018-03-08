@@ -69,20 +69,20 @@ public class UserController {
 
     @RequestMapping(value="/login", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
-    public ResponseEntity<String> validateUser(@RequestParam(value="username") String username, @RequestParam(value = "password") String rawPassword) {
+    public ResponseEntity<User> validateUser(@RequestParam(value="username") String username, @RequestParam(value = "password") String rawPassword) {
         HttpStatus status = HttpStatus.OK;
         User user = service.find(username);
         if (user == null) {
-            return new ResponseEntity<String>("false", status);
+            return new ResponseEntity<>(new User(), status);
         } else {
-            if (encoder.matches(rawPassword, user.getPassword()) && user.getAccesToken() == null) {
+            if (encoder.matches(rawPassword, user.getPassword())) {
                 String accesstoken = UUID.randomUUID().toString();
                 user.setAccesToken(accesstoken);
                 service.update(user);
                 user.setPassword("HIDDEN");
-                return new ResponseEntity<String>(accesstoken, status);
+                return new ResponseEntity<>(user, status);
             } else {
-                return new ResponseEntity<String>("false", status);
+                return new ResponseEntity<>(new User(), status);
             }
         }
     }

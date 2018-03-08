@@ -1,0 +1,20 @@
+﻿<Window x:Class="frontend.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:frontend"
+        mc:Ignorable="d"
+        Title="Login" Height="500" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid Background="Black">
+        
+        <Border Width="350" Height="250" CornerRadius="20" BorderBrush="Blue" BorderThickness="2" Background="White"/>
+        <TextBox x:Name="emailBox" Text="E-mailadres" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,160,0,0" BorderThickness="2" BorderBrush="Black"/>
+        <PasswordBox x:Name="passwordBox" FontSize="16" Padding="5,2,0,0" Width="260" Height="30" VerticalAlignment="Top" Margin="0,210,0,0" BorderThickness="2" BorderBrush="Black"/>
+        <TextBox x:Name="passwordTextBox" Text="Paswoord" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,210,0,0" BorderThickness="2" BorderBrush="Black" Visibility="Visible"/>
+        <Label x:Name="errorBox" Content="" FontSize="13" Padding="5,2,0,0" Foreground="Red" Width="260" Height="45" VerticalAlignment="Top" Margin="0,245,0,0" Visibility="Visible"/>
+        <Button x:Name="loginButton" Content="Aanmelden" FontSize="16" Width="260" Height="30" VerticalAlignment="Top" Margin="0,290,0,0" BorderThickness="2" BorderBrush="Black" Background="#FF1AA5ED" Foreground="White" Click="LoginButton_Click"/>
+        <Label x:Name="messageLabel" Content="" Width="200" VerticalAlignment="Top" Margin="0,325,100,0" Foreground="Gray"/>
+    </Grid>
+</Window>
+

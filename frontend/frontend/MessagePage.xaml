@@ -1,0 +1,80 @@
+﻿<Page x:Class="frontend.MessagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="Send message" Background="WhiteSmoke">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Background" Value="#FF27272E"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="DarkGray"/>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="DarkRed"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <DockPanel>
+            <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
+                <ListBox x:Name="menuBox" HorizontalAlignment="Left" Background="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False">
+                    <ListBoxItem Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Send Message" IsSelected="True"  Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Coming soon" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Coming soon" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Statistics" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem  Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                </ListBox>
+            </Viewbox>
+
+            <StackPanel DockPanel.Dock="Right" Background="WhiteSmoke">
+                <TextBlock Text="Send message" FontSize="40" Foreground="White" Padding="10,5,0,5">
+                    <TextBlock.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="2.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF144563" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <TextBlock Text="Send a message to someone" Margin="10,25,0,0" FontSize="26" FontWeight="DemiBold"/>
+                <Border BorderThickness="2" CornerRadius="2" BorderBrush="Black" Width="825" Height="86" Margin="10,25,0,0">
+                    <StackPanel>
+                        <DockPanel Background="#C0C0C0">
+                            <TextBlock Text="You" Foreground="White" VerticalAlignment="Center" FontSize="14" Margin="10,0,0,0"/>
+                            <TextBox x:Name="senderTextBox" Text="" Background="#C0C0C0" Foreground="White" BorderThickness="0" VerticalAlignment="Center" FontSize="14" Margin="10,0,0,0" IsReadOnly="True"/>
+                        </DockPanel>
+                        <DockPanel>
+
+                        </DockPanel>
+
+                        <DockPanel Background="#C0C0C0" Height="28">
+                            <TextBlock Text="Choose reciever" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <ListBox x:Name="recieverBox" Foreground="White"  Background="#C0C0C0"/>
+
+                        </DockPanel>
+                        <DockPanel Background="#C0C0C0" Height="28">
+                            <TextBlock Text="Message" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
+                            <TextBox x:Name="messageText" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" Background="#C0C0C0"/>
+                        </DockPanel>
+
+                    </StackPanel>
+                </Border>
+                <Button x:Name="Sendbutton" Content="Send message" Background="White" BorderBrush="Black" BorderThickness="1" Margin="10,15,0,0" HorizontalAlignment="Left" Click="SendButton_Click"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Page>
