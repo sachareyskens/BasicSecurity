@@ -38,20 +38,17 @@ namespace front.ViewModels
             SSOCommand = new CustomCommand(null, null);
         }
 
-        public async void Login(Object obj)
+        public void Login(Object obj)
         {
-            
-            
-                currentUser = CurrentUser;
-                User user = service.Login(currentUser.username, currentUser.password);
-                if (!user.username.Equals("false"))
-                {
-
-                    currentUser.accesstoken = user.accesstoken;
-                    Messenger.Default.Send<LoggedUser>(currentUser);
-                    new NavService().NavigateTo("Main");
-                }
-            
+            currentUser = CurrentUser;
+            String checker = service.Login(currentUser.username, currentUser.password);
+            if (!checker.Equals("false"))
+            {
+                
+                currentUser.accesstoken = checker;
+                Messenger.Default.Send<LoggedUser>(currentUser);
+                new NavService().NavigateTo("Main");
+            }
         }
 
         public LoggedUser CurrentUser

@@ -2,28 +2,6 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.10586": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -49,13 +27,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -2486,7 +2457,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -2499,28 +2469,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-arm": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2546,13 +2494,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -5020,7 +4961,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -5033,28 +4973,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-arm-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5080,13 +4998,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -7590,7 +7501,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -7603,28 +7513,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x64": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7650,13 +7538,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -10133,7 +10014,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -10146,28 +10026,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x64-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -10193,13 +10051,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -12712,7 +12563,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -12725,28 +12575,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x86": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -12772,13 +12600,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -15255,7 +15076,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -15268,28 +15088,6 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x86-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http": "2.2.22",
-          "Newtonsoft.Json": "6.0.4"
-        },
-        "compile": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.Bcl/1.1.9": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.14"
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.14": {
-        "type": "package"
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -15315,13 +15113,6 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Http/2.2.22": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.9",
-          "Microsoft.Bcl.Build": "1.0.14"
         }
       },
       "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -17834,7 +17625,6 @@
         "type": "project",
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4",
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.8",
           "Newtonsoft.Json": "11.0.1"
         },
@@ -17848,39 +17638,6 @@
     }
   },
   "libraries": {
-    "Microsoft.AspNet.WebApi.Client/5.2.4": {
-      "sha512": "OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
-      "type": "package",
-      "path": "microsoft.aspnet.webapi.client/5.2.4",
-      "files": [
-        "lib/net45/System.Net.Http.Formatting.dll",
-        "lib/net45/System.Net.Http.Formatting.xml",
-        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
-        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
-        "microsoft.aspnet.webapi.client.nuspec"
-      ]
-    },
-    "Microsoft.Bcl/1.1.9": {
-      "sha512": "USQ55innJy8K+tAXvVa1O8dUTp2s7pmJ5cJj6Tl02HtGc2xBDj0P2QH5620HbGXIWKWYhydoeQF8Rm/JRDBGhw==",
-      "type": "package",
-      "path": "microsoft.bcl/1.1.9",
-      "files": [
-        "Microsoft.Bcl.1.1.9.nupkg.sha512",
-        "Microsoft.Bcl.nuspec"
-      ]
-    },
-    "Microsoft.Bcl.Build/1.0.14": {
-      "sha512": "cDLKSvNvRa519hplsbSoYqO69TjdDIhfjtKUM0g20/nVROoWsGav9KCI9HtnGjLmdV1+TcUUDhbotcllibjPEA==",
-      "type": "package",
-      "path": "microsoft.bcl.build/1.0.14",
-      "files": [
-        "Microsoft.Bcl.Build.1.0.14.nupkg.sha512",
-        "Microsoft.Bcl.Build.nuspec"
-      ]
-    },
     "Microsoft.CSharp/4.3.0": {
       "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
       "type": "package",
@@ -17936,15 +17693,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "Microsoft.Net.Http/2.2.22": {
-      "sha512": "bqVLJ2UimlAEs2bn3y28lB1pmFRxuysv9pFyB0A86WEMYGYTfDyfjAGjm0fiaSRjlMNU1jVnp8Mxt8qe4OmpXQ==",
-      "type": "package",
-      "path": "microsoft.net.http/2.2.22",
-      "files": [
-        "Microsoft.Net.Http.2.2.22.nupkg.sha512",
-        "Microsoft.Net.Http.nuspec"
       ]
     },
     "Microsoft.Net.Native.Compiler/1.7.3": {
@@ -27790,7 +27538,6 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.10586": [
       "Domain >= 1.0.0",
-      "Microsoft.AspNet.WebApi.Client >= 5.2.4",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.8",
       "Newtonsoft.Json >= 11.0.1"
     ]
@@ -27839,10 +27586,6 @@
     "frameworks": {
       "uap10.0.10586": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": {
-            "target": "Package",
-            "version": "[5.2.4, )"
-          },
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.0.8, )"
