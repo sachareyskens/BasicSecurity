@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\front.exe">
       <PackagePath>entrypoint\front.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\11400982\.nuget\packages\microsoft.aspnet.webapi.client\5.2.4\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>

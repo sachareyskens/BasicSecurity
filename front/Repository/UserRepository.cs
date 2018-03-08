@@ -1,39 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
+
+
 using System.Threading.Tasks;
 using Domain;
 using Newtonsoft.Json;
+using Windows.Storage.Streams;
+using Windows.Web.Http;
+using Windows.Web.Http.Headers;
 
 namespace Repository
 {
     public class UserRepository : IUserRepository
     {
+        private string prefix;
+
         private HttpClient client;
         public UserRepository(String username, String password)
         {
+
             client = new HttpClient();
-            client.BaseAddress = new Uri(Global.IP_ADRESS);
+            prefix = Global.IP_ADRESS;
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+            client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue(
                 "Basic",
                 Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", username, password))));
+
         }
         public void AddUser(User user)
         {
-            var url = "/users/add";
+            Uri url = new Uri(prefix + "/users/add");
             var jsonString = JsonConvert.SerializeObject(user);
-            HttpResponseMessage response = client.PostAsync(url, new StringContent(jsonString, Encoding.UTF8, "application/json")).Result;
+            HttpResponseMessage response = client.PostAsync(url, new HttpStringContent(jsonString, UnicodeEncoding.Utf8, "application/json")).GetResults();
         }
 
         public async Task<List<string>> AllNamesAsync()
         {
-            var url = "/users/names";
-            HttpResponseMessage response = client.GetAsync(url).Result;
+            Uri url = new Uri(prefix + "/users/names");
+            HttpResponseMessage response = client.GetAsync(url).GetResults();
             string jsonString = "";
 
 
@@ -44,24 +49,37 @@ namespace Repository
             return StringResponse;
         }
 
-        public async Task<String> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
-            var url = "/users/login?username=" + username + "&password=" + password;
-            HttpResponseMessage response = client.GetAsync(url).Result;
+            HttpResponseMessage response = null;
+            try
+            {
+                Uri url = new Uri(prefix + "/users/login?username=" + username + "&password=" + password);
+                response = client.GetAsync(url).GetResults();
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.InnerException.Message);
+                
+            }
             string jsonString = "";
 
+            try
+            {
+                jsonString = await response.Content.ReadAsStringAsync();
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
 
-            jsonString = await response.Content.ReadAsStringAsync();
+            var user = JsonConvert.DeserializeObject<User>(jsonString);
 
-
-            var StringResponse = JsonConvert.DeserializeObject<String>(jsonString);
-            return StringResponse;
+            return user;
         }
 
         public async Task<Boolean> LogoutAsync(String username)
         {
-            var url = "/users/logout?username=" + username;
-            HttpResponseMessage response = client.GetAsync(url).Result;
+            Uri url = new Uri(prefix + "/users/logout?username=" + username);
+            HttpResponseMessage response = client.GetAsync(url).GetResults();
             string jsonString = "";
 
             
@@ -72,10 +90,10 @@ namespace Repository
             return boolResponse;
         }
 
-        public async Task<bool> ValidateToken(string token)
+        public async Task<Boolean> ValidateToken(string token)
         {
-            var url = "/users/validatetoken?token=" + token;
-            HttpResponseMessage response = client.GetAsync(url).Result;
+            Uri url = new Uri(prefix + "/users/validatetoken?token=" + token);
+            HttpResponseMessage response = client.GetAsync(url).GetResults();
             string jsonString = "";
 
 

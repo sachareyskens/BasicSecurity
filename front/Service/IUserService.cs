@@ -11,7 +11,7 @@ namespace Service
     {
         List<String> allNames();
         void addUser(User user);
-        String Login(String username, String password);
+        User Login(String username, String password);
         Boolean Logout(String username);
         Boolean ValidateToken(String token);
 

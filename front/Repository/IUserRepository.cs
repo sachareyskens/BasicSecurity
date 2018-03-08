@@ -9,7 +9,7 @@ namespace Repository
 {
     public interface IUserRepository
     {
-        Task<String> Login(String username, String password);
+        Task<User> Login(String username, String password);
         Task<Boolean> LogoutAsync(String username);
         Task<List<String>> AllNamesAsync();
         Task<Boolean> ValidateToken(String token);

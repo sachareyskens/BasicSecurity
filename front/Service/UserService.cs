@@ -25,9 +25,10 @@ namespace Service
             return repo.AllNamesAsync().Result.ToList(); ;
         }
 
-        public string Login(string username, string password)
+        public User Login(string username, string password)
         {
-            return repo.Login(username, password).Result;
+           
+                return repo.Login(username, password).Result;
         }
 
         public bool Logout(string username)

@@ -31,13 +31,17 @@
     <AppXManifest Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-07T21:15:39.717</Modified>
+      <Modified>2018-03-08T10:20:38.020</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\front.exe">
       <PackagePath>entrypoint\front.exe</PackagePath>
-      <Modified>2018-03-07T21:15:36.743</Modified>
+      <Modified>2018-03-08T10:20:36.578</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\11400982\.nuget\packages\microsoft.aspnet.webapi.client\5.2.4\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+      <Modified>2018-02-01T11:17:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -521,15 +525,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Domain\bin\x86\Debug\Domain.dll">
       <PackagePath>Domain.dll</PackagePath>
-      <Modified>2018-03-07T13:51:44.070</Modified>
+      <Modified>2018-03-08T08:03:15.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Service\bin\x86\Debug\Service.dll">
       <PackagePath>Service.dll</PackagePath>
-      <Modified>2018-03-07T21:15:31.074</Modified>
+      <Modified>2018-03-08T10:20:33.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\Service\bin\x86\Debug\Repository.dll">
       <PackagePath>Repository.dll</PackagePath>
-      <Modified>2018-03-07T21:15:29.302</Modified>
+      <Modified>2018-03-08T10:20:32.668</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -580,11 +584,11 @@
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-07T21:15:39.000</Modified>
+      <Modified>2018-03-08T10:20:37.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\Core\front.exe">
       <PackagePath>front.exe</PackagePath>
-      <Modified>2018-03-07T21:15:39.707</Modified>
+      <Modified>2018-03-08T10:20:38.010</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

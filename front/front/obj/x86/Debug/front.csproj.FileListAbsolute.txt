@@ -261,3 +261,6 @@ C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\Views
 C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\Views\SendMessagePage.xaml
 C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\Views\DecryptedMessagePage.xbf
 C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\Views\SendMessagePage.xbf
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\bin\x86\Debug\System.Net.Http.Formatting.dll
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.CommonWebApiResources.resw
+C:\Users\11400982\Documents\GitHub\BasicSecurity\front\front\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.Resources.resw

@@ -8,6 +8,6 @@ namespace Repository
 {
     public class Global
     {
-        public static String IP_ADRESS = "https://localhost:8443/api";
+        public static String IP_ADRESS = "http://localhost:8080/api";
     }
 }
