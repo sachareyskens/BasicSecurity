@@ -36,11 +36,10 @@ namespace frontend
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Basic",
                 Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
-            GetAllNames();
-            Sender = scherm.GetUser();
-            senderTextBox.Text = Sender.username;
-            recieverBox.ItemsSource = l;
             
+            Sender = scherm.GetUser();
+            GetAllNames();
+
         }
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -55,7 +54,7 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("MessagePage.xaml", UriKind.Relative);
                     break;
                 case 2:
-                    scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
                 case 3:
                     scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
@@ -77,10 +76,10 @@ namespace frontend
             if (response.IsSuccessStatusCode)
             {
                 t = await response.Content.ReadAsAsync<List<String>>();
-                
 
+                recieverBox.ItemsSource = t;
             }
-            l = t;
+            
         }
 
         
@@ -104,12 +103,13 @@ namespace frontend
                 try
                 {
                     Message message = new Message();
-                    message.reciever = recieverBox.SelectedValue.ToString();
+                    message.receiver = recieverBox.SelectedValue.ToString();
                     message.message = messageText.Text;
                     message.sender = Sender.username;
                     message.validation = "";
                     message.signature = new Byte[1];
                     message.encryptedSymm = new Byte[1];
+                   
 
                     var userUrl = "/api/messages/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);

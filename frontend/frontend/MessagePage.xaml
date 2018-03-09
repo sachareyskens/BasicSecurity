@@ -33,11 +33,12 @@
             <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
                 <ListBox x:Name="menuBox" HorizontalAlignment="Left" Background="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False">
                     <ListBoxItem Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Send Message" IsSelected="True"  Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Coming soon" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Coming soon" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem IsSelected="True" Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Add User" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Statistics" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem  Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                 </ListBox>
             </Viewbox>
 
@@ -53,22 +54,16 @@
                 <TextBlock Text="Send a message to someone" Margin="10,25,0,0" FontSize="26" FontWeight="DemiBold"/>
                 <Border BorderThickness="2" CornerRadius="2" BorderBrush="Black" Width="825" Height="86" Margin="10,25,0,0">
                     <StackPanel>
-                        <DockPanel Background="#C0C0C0">
-                            <TextBlock Text="You" Foreground="White" VerticalAlignment="Center" FontSize="14" Margin="10,0,0,0"/>
-                            <TextBox x:Name="senderTextBox" Text="" Background="#C0C0C0" Foreground="White" BorderThickness="0" VerticalAlignment="Center" FontSize="14" Margin="10,0,0,0" IsReadOnly="True"/>
-                        </DockPanel>
-                        <DockPanel>
+                        
+
+                        <DockPanel  Height="28">
+                            <TextBlock Text="Choose reciever" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <ListBox x:Name="recieverBox" Foreground="white"   Height="30" ItemsSource="{Binding}"/>
 
                         </DockPanel>
-
-                        <DockPanel Background="#C0C0C0" Height="28">
-                            <TextBlock Text="Choose reciever" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                            <ListBox x:Name="recieverBox" Foreground="White"  Background="#C0C0C0"/>
-
-                        </DockPanel>
-                        <DockPanel Background="#C0C0C0" Height="28">
-                            <TextBlock Text="Message" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
-                            <TextBox x:Name="messageText" Foreground="White" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" Background="#C0C0C0"/>
+                        <DockPanel  Height="28">
+                            <TextBlock Text="Message" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
+                            <TextBox x:Name="messageText" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
                         </DockPanel>
 
                     </StackPanel>

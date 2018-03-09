@@ -9,11 +9,11 @@ namespace frontend.Models
     public class Message
     {
         public int id { get; set; }
-        public String message { get; set; }
-        public String sender { get; set; }
-        public String reciever { get; set; }
-        public Byte[] encryptedSymm { get; set; }
-        public Byte[] signature { get; set; }
-        public String validation { get; set; }
+        public string message { get; set; }
+        public string sender { get; set; }
+        public string receiver { get; set; }
+        public byte[] encryptedSymm { get; set; }
+        public byte[] signature { get; set; }
+        public string validation { get; set; }
     }
 }

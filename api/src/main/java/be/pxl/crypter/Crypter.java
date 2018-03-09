@@ -126,9 +126,9 @@ public class Crypter {
 
             if (checkHash(checker, hash)) {
 
-                message.setValidation("OK, HASHES ARE EQUAL");
+                message.setValidation("OK");
             } else {
-                message.setValidation("FALSE, NOT RIGHT HASH");
+                message.setValidation("FALSE");
             }
             message.setMessage(new String(plainText));
         } catch (NoSuchAlgorithmException e) {

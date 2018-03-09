@@ -28,6 +28,7 @@ public class MessageController {
 
 
 
+
     public static final String BASE_URL = "api/messages";
 
 
@@ -47,11 +48,7 @@ public class MessageController {
     public void addMessage(@RequestBody Message message) {
 
         service.persist(crypter.encryptMessage(message));
-    }
-    @RequestMapping(value="/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void updateMessage(@RequestBody Message message) {
 
-        service.update(message);
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
@@ -74,7 +71,7 @@ public class MessageController {
         }
 
     }
-    @RequestMapping(value= "/showall}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
+    @RequestMapping(value= "/showall", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Message> showAllByUsername(@RequestParam("username") String username) {
         return service.findByUsername(username);
     }

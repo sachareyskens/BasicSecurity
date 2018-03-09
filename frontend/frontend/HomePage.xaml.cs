@@ -58,7 +58,7 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("MessagePage.xaml", UriKind.Relative);
                     break;
                 case 2:
-                    scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
                 case 3:
                     scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
