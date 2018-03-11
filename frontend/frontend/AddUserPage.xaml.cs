@@ -1,6 +1,5 @@
 ﻿using frontend.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -21,21 +20,19 @@ using System.Windows.Shapes;
 namespace frontend
 {
     /// <summary>
-    /// Interaction logic for RecievedPage.xaml
+    /// Interaction logic for AddUserPage.xaml
     /// </summary>
-    public partial class RecievedPage : Page
+    public partial class AddUserPage : Page
     {
         HttpClient client = new HttpClient();
         HomeWindow scherm;
-        IEnumerable<Message> messages;
-        Message decryptedMessage;
-        List<Message> decryptedList = new List<Message>();
-        public RecievedPage()
+        public AddUserPage()
         {
+            
             InitializeComponent();
             scherm = (HomeWindow)Application.Current.MainWindow;
             menuBox.SelectionChanged += MenuBox_SelectionChanged;
-            
+
             ServicePointManager.ServerCertificateValidationCallback += (send, certificate, chain, sslPolicyErrors) => { return true; };
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
@@ -46,18 +43,7 @@ namespace frontend
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
-
-
-            getAllUsers();
-
         }
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
-        {
-            searchTextBox.Text = "";
-
-            getAllUsers();
-        }
-
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = menuBox.SelectedIndex;
@@ -89,85 +75,51 @@ namespace frontend
             }
         }
 
-        public async void getAllUsers()
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            var userUrl = "/api/messages/showall?username=" + scherm.GetUser().username;
-            HttpResponseMessage response = await client.GetAsync(userUrl);
-            IEnumerable<Message> t = null;
-            if (response.IsSuccessStatusCode)
+            if (MessageBox.Show("Ben je zeker dat je dit bericht wilt annuleren? Alle wijzigingen zullen verloren gaan", "Sluit venster",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                t = await response.Content.ReadAsAsync<List<Message>>();
-                articlesDataGrid.ItemsSource = t;
-                messages = t;
-            }
+                scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
 
+            }
         }
 
-
-
-        
-
-        private void SearchTextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        private async void addButton_Click(object sender, RoutedEventArgs e)
         {
-            getAllUsers();
-            IEnumerable<Message> allMessages = messages;
 
-            List<Message> selectedMessages = new List<Message>();
-
-            foreach (Message m in allMessages)
+            if (userText.Text != "" && passwordText.Password != "")
             {
-                if (m.sender == searchTextBox.Text)
+                try
                 {
-                    selectedMessages.Add(m);
+                    User user = new User();
+                    user.username = userText.Text;
+                    user.password = passwordText.Password;
+                    user.active = true;
+
+
+                    var userUrl = "/api/users/add";
+                    HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, user);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Succesfully added");
+                    }
+
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Verbinding met de server verbroken. Probeer later opnieuw.",
+                        "Serverfout", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            if (selectedMessages.Count !=0)
+            else
             {
-                articlesDataGrid.ItemsSource = selectedMessages;
+                MessageBox.Show("Please enter message/select reciever.");
             }
 
-        }
-
-        public async void decryptMessage(Message message)
-        {
-            var userUrl = "/api/messages/decrypt/" + message.id + "?loggedIn=" + scherm.GetUser().username;
-            HttpResponseMessage response = await client.GetAsync(userUrl);
-            
-            if (response.IsSuccessStatusCode)
-            {
-                decryptedMessage = await response.Content.ReadAsAsync<Message>();
-                decryptedList.Add(decryptedMessage);
-                decryptedDataGrid.ItemsSource = decryptedList;
-                decryptedDataGrid.Items.Refresh();
-            }
-
-            
-
-            
-        }
-
-        public async void deleteMessage(Message message)
-        {
-            var userUrl = "/api/messages/delete/" + message.id;
-            HttpResponseMessage response = await client.DeleteAsync(userUrl);
-            Message t = null;
-            if (response.IsSuccessStatusCode)
-            {
-                t = await response.Content.ReadAsAsync<Message>();
-                getAllUsers();
-            }
-        }
-
-        private void decryptMessageButton_Click(object sender, RoutedEventArgs e)
-        {
-            decryptMessage((Message)articlesDataGrid.SelectedItem);
-            
-        }
-
-        private void deleteMessageButton_Click(object sender, RoutedEventArgs e)
-        {
-            deleteMessage((Message)articlesDataGrid.SelectedItem);
-            
         }
     }
+
+    
 }

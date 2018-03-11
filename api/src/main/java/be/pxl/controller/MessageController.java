@@ -64,7 +64,6 @@ public class MessageController {
             Message messagee = crypter.decryptMessage(message, username);
             byte[] hidden = new byte[1];
             messagee.setEncryptedSymm(hidden);
-            service.delete(messagee.getId());
             return new ResponseEntity<>(messagee, status);
         } catch (Exception e) {
             return new ResponseEntity<>(new Message(), HttpStatus.NOT_FOUND);

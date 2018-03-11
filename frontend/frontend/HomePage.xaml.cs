@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frontend.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -42,7 +43,7 @@ namespace frontend
                 "Basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
 
-            
+            loadData();
 
         }
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,16 +62,34 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
                 case 3:
-                    scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("AddUserPage.xaml", UriKind.Relative);
                     break;
                 case 4:
-                    scherm.displayFrame.Source = new Uri("Statspage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
                 case 5:
+                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
+                    break;
+                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
             }
+        }
+
+        public async void loadData()
+        {
+            var userUrl = "/api/messages/countAll";
+            HttpResponseMessage response = await client.GetAsync(userUrl);
+
+            if (response.IsSuccessStatusCode)
+            {
+                StatsSource s = await response.Content.ReadAsAsync<StatsSource>();
+                welcomeBlock.Text = "Welcome, " + scherm.GetUser().username + "!";
+                messBlock.Text = s.totalMessages;
+                usersBlock.Text = s.totalUsers;
+            }
+
         }
     }
 }

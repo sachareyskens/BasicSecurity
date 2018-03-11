@@ -1,22 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace frontend
 {
     /// <summary>
-    /// Interaction logic for LogoutPage.xaml
+    /// Interaction logic for SettingsPage.xaml
     /// </summary>
-    public partial class LogoutPage : Page
+    public partial class SettingsPage : Page
     {
-        HomeWindow scherm = (HomeWindow)Application.Current.MainWindow;
         HttpClient client = new HttpClient();
-        public LogoutPage()
+        HomeWindow scherm;
+        public SettingsPage()
         {
             InitializeComponent();
+            scherm = (HomeWindow)Application.Current.MainWindow;
+            menuBox.SelectionChanged += MenuBox_SelectionChanged;
             ServicePointManager.ServerCertificateValidationCallback += (send, certificate, chain, sslPolicyErrors) => { return true; };
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
@@ -26,24 +39,8 @@ namespace frontend
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Basic",
-                Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
-            menuBox.SelectionChanged += MenuBox_SelectionChanged;
-
-            if (MessageBox.Show("Bent u zeker dat u wilt afmelden?", "Afmelden",
-                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                Logout();
-                LoginWindow window = new LoginWindow();
-                window.Show();
-                scherm.Close();
-            }
-            else
-            {
-                scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
-            }
+                Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
         }
-
-
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = menuBox.SelectedIndex;
@@ -74,12 +71,5 @@ namespace frontend
 
             }
         }
-
-        private async void Logout()
-        {
-            var userUrl = "/api/users/logout?username=" + scherm.GetUser().username;
-            HttpResponseMessage response = await client.GetAsync(userUrl);
-        }
     }
 }
-

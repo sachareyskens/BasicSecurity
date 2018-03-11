@@ -1,11 +1,13 @@
-﻿<Page x:Class="frontend.MessagePage"
+﻿<Page x:Class="frontend.SettingsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:frontend"
       mc:Ignorable="d" 
-      d:DesignHeight="850" d:DesignWidth="1200"
-      Title="Send message" Background="WhiteSmoke">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettingsPage">
+
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type ListBoxItem}">
@@ -28,22 +30,39 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Background="{TemplateBinding Background}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </Grid.Resources>
         <DockPanel>
             <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
                 <ListBox x:Name="menuBox" HorizontalAlignment="Left" Background="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False">
-                    <ListBoxItem Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem IsSelected="True" Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem  Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Add User" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="ChatBox (progress)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem IsSelected="True"  Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                 </ListBox>
             </Viewbox>
 
+
             <StackPanel DockPanel.Dock="Right" Background="WhiteSmoke">
-                <TextBlock Text="Send message" FontSize="40" Foreground="White" Padding="10,5,0,5">
+                <TextBlock Text="Settings(In Progress)" FontSize="40" Padding="10,5,0,5" Foreground="White">
                     <TextBlock.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="2.5,0">
                             <GradientStop Color="Black"/>
@@ -51,24 +70,17 @@
                         </LinearGradientBrush>
                     </TextBlock.Background>
                 </TextBlock>
-                <TextBlock Text="Send a message to someone" Margin="10,25,0,0" FontSize="26" FontWeight="DemiBold"/>
-                <Border BorderThickness="2" CornerRadius="2" BorderBrush="Black" Width="825" Height="86" Margin="10,25,0,0">
-                    <StackPanel>
-                        
-
-                        <DockPanel  Height="28">
-                            <TextBlock Text="Choose reciever" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                            <ComboBox x:Name="recieverBox" Foreground="black"   Height="30" ItemsSource="{Binding}" />
-
-                        </DockPanel>
-                        <DockPanel  Height="28">
-                            <TextBlock Text="Message" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
-                            <TextBox x:Name="messageText" Foreground="black" FontSize="14" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        </DockPanel>
-
-                    </StackPanel>
-                </Border>
-                <Button x:Name="Sendbutton" Content="Send message" Background="White" BorderBrush="Black" BorderThickness="1" Margin="10,15,0,0" HorizontalAlignment="Left" Click="SendButton_Click"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                </StackPanel>
+                <StackPanel Margin="10,30,10,0">
+                    <Border BorderBrush="Blue" BorderThickness="2" CornerRadius="10" Background="White">
+                        <StackPanel>
+                            <TextBlock FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
+                                <TextBlock x:Name="welcomeBlock" Text="In Progress"></TextBlock>
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
             </StackPanel>
         </DockPanel>
     </Grid>

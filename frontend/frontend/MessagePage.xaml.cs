@@ -57,12 +57,15 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
                 case 3:
-                    scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("AddUserPage.xaml", UriKind.Relative);
                     break;
                 case 4:
-                    scherm.displayFrame.Source = new Uri("Statspage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
                 case 5:
+                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
+                    break;
+                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -86,7 +89,7 @@ namespace frontend
         
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Ben je zeker dat je deze mail wilt annuleren? Alle wijzigingen zullen verloren gaan", "Sluit venster",
+            if (MessageBox.Show("Ben je zeker dat je dit bericht wilt annuleren? Alle wijzigingen zullen verloren gaan", "Sluit venster",
                 MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 scherm.displayFrame.Source = new Uri("HomePage.xaml", UriKind.Relative);
@@ -98,7 +101,7 @@ namespace frontend
         private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
 
-            if (messageText.Text != "")
+            if (messageText.Text != "" && recieverBox.SelectedValue != null)
             {
                 try
                 {
@@ -125,6 +128,9 @@ namespace frontend
                     MessageBox.Show("Verbinding met de server verbroken. Probeer later opnieuw.",
                         "Serverfout", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            } else
+            {
+                MessageBox.Show("Please enter message/select reciever.");
             }
 
         }

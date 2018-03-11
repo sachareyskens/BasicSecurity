@@ -54,7 +54,7 @@
                     <ListBoxItem Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Add User" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Statistics" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="ChatBox (progress)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                 </ListBox>
@@ -75,11 +75,13 @@
                 <StackPanel Margin="10,30,10,0">
                     <Border BorderBrush="Blue" BorderThickness="2" CornerRadius="10" Background="White">
                         <StackPanel>
-                            <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
-                                <Label Content="Unread messages :"/>
+                            <TextBlock FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
+                                <TextBlock x:Name="welcomeBlock" Text="{Binding}"></TextBlock>
                             </TextBlock>
                             <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
-                                <Label Content="Active users :"/>
+                                <TextBlock x:Name="messBlock" Text="{Binding}"></TextBlock>
+                            </TextBlock>
+                            <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
                                 <TextBlock x:Name="usersBlock" Text="{Binding}"></TextBlock>
                             </TextBlock>
                         </StackPanel>

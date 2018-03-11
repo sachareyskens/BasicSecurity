@@ -39,7 +39,7 @@
                     <ListBoxItem Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem IsSelected="True" Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Add User" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Statistics" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Chatbox(progress)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                 </ListBox>
@@ -63,7 +63,7 @@
                         
                     </StackPanel>
                 </Border>
-                <DataGrid x:Name="articlesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" RowHeight="50" Height="500" Width="930" IsReadOnly="True" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="articlesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" RowHeight="50" Height="250" Width="930" VerticalScrollBarVisibility="Auto" IsReadOnly="True" HorizontalScrollBarVisibility="Disabled">
                     <DataGrid.Columns>
                         
                             <DataGridTextColumn x:Name="titleColumn" Binding="{Binding sender}" Header="Sender" Width="100" IsReadOnly="True" CanUserResize="False">
@@ -127,6 +127,63 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="Decrypted messages : "/>
+                <DataGrid x:Name="decryptedDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" RowHeight="50" Height="250" Width="930" VerticalScrollBarVisibility="Auto" IsReadOnly="True" HorizontalScrollBarVisibility="Disabled">
+                    <DataGrid.Columns>
+                        
+                            <DataGridTextColumn x:Name="decryptedTitleColumn" Binding="{Binding sender}" Header="Sender" Width="100" IsReadOnly="True" CanUserResize="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                            <DataGridTextColumn.EditingElementStyle>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="AcceptsReturn" Value="true" />
+                                </Style>
+                            </DataGridTextColumn.EditingElementStyle>
+                        </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="decryptedcontentColumn" Binding="{Binding receiver}" Header="Reciever" Width="100" IsReadOnly="True" CanUserResize="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="decryptedauthorColumn" Binding="{Binding message}" Header="Message" Width="350" IsReadOnly="True" CanUserResize="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                            <DataGridTextColumn.EditingElementStyle>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="AcceptsReturn" Value="true" />
+                                </Style>
+                            </DataGridTextColumn.EditingElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="decrypteddateColumn" Binding="{Binding validation}" Header="Validation" Width="75" IsReadOnly="True" CanUserResize="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                            <DataGridTextColumn.EditingElementStyle>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                    <Setter Property="AcceptsReturn" Value="true" />
+                                </Style>
+                            </DataGridTextColumn.EditingElementStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
