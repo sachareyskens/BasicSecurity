@@ -14,4 +14,6 @@ public interface IMessageService {
     void delete(int id);
     List<Message> findByUsername(String username);
     int countAll();
+
+    List<Message> findBySenderAndReciever(String sender, String reciever);
 }

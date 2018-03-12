@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frontend.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -27,7 +28,7 @@ namespace frontend
         HomeWindow scherm;
         public ChatboxPage()
         {
-            
+
             InitializeComponent();
             scherm = (HomeWindow)Application.Current.MainWindow;
             menuBox.SelectionChanged += MenuBox_SelectionChanged;
@@ -41,6 +42,7 @@ namespace frontend
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 "Basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
+            GetAllNames();
         }
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -70,6 +72,49 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
+            }
+        }
+
+        private void Sendbutton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public async void GetAllNames()
+        {
+            var userUrl = "/api/users/names";
+            HttpResponseMessage response = await client.GetAsync(userUrl);
+            List<String> t = null;
+            if (response.IsSuccessStatusCode)
+            {
+                t = await response.Content.ReadAsAsync<List<String>>();
+
+                senderBox.ItemsSource = t;
+            }
+
+        }
+
+
+        private async void ComboBox_SelectionChangedAsync(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var userUrl = "/api/messages/decrypt/all?sender=" + senderBox.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
+                HttpResponseMessage response = await client.GetAsync(userUrl);
+                IEnumerable<Message> t = null;
+                if (response.IsSuccessStatusCode)
+                {
+                    t = await response.Content.ReadAsAsync<List<Message>>();
+
+                    foreach (Message m in t)
+                    {
+                        txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message);
+                    }
+
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show("Sorry, failed to fetch any data. You might not have messages from this person.");
             }
         }
     }

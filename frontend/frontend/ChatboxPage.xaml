@@ -113,8 +113,11 @@
                     </TextBlock.Background>
                 </TextBlock>
                 <StackPanel Margin="10,10,10,0">
+                    <DockPanel>
                     <Label Width="140" Content="Incoming Chat Messages" HorizontalAlignment="Left" Margin="10,0,0,10" FontFamily="Agency FB" FontSize="15" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment">
                     </Label>
+                        <ComboBox x:Name="senderBox" HorizontalAlignment="Right" Width="50" Text="Choose reciever" SelectionChanged="ComboBox_SelectionChanged" VerticalAlignment="Top" ItemsSource="{Binding}"/>
+                    </DockPanel>
                     <Border Margin="10,0,10,17" VerticalAlignment="Bottom" Height="115" Background="#FFFFC936" CornerRadius="5,5,5,5" d:LayoutOverrides="VerticalAlignment">
                         <TextBox Margin="5,5,5,5" x:Name="txtMessages" Width="Auto" Height="Auto" BorderBrush="{x:Null}" FontFamily="Agency FB" FontSize="15" Text="" TextWrapping="Wrap" IsEnabled="True" Cursor="IBeam"  ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True" />
                         
@@ -129,7 +132,7 @@
                     </StackPanel>
                     <StackPanel Height="20">
 
-                        <Button x:Name="Sendbutton" Style="{DynamicResource RoundCorner}" Content="Send message" BorderBrush="Black" BorderThickness="1" Margin="12,0,0,0" HorizontalAlignment="Left" Click="SendButton_Click"/>
+                        <Button x:Name="Sendbutton" Style="{DynamicResource RoundCorner}" Content="Send message" BorderBrush="Black" BorderThickness="1" Margin="12,0,0,0" HorizontalAlignment="Left" Click="Sendbutton_Click"/>
 
                     </StackPanel>
                     

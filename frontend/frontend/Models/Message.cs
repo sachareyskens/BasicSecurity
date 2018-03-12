@@ -15,5 +15,6 @@ namespace frontend.Models
         public byte[] encryptedSymm { get; set; }
         public byte[] signature { get; set; }
         public string validation { get; set; }
+        public DateTime date { get; set; }
     }
 }

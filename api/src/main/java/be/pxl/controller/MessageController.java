@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -47,6 +49,7 @@ public class MessageController {
     @RequestMapping(value="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addMessage(@RequestBody Message message) {
 
+        message.setDate(LocalDateTime.now());
         service.persist(crypter.encryptMessage(message));
 
     }
@@ -73,6 +76,25 @@ public class MessageController {
     @RequestMapping(value= "/showall", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Message> showAllByUsername(@RequestParam("username") String username) {
         return service.findByUsername(username);
+    }
+
+    @RequestMapping(value= "/decrypt/all", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
+    public List<Message> decryptAll(@RequestParam("sender") String sender, @RequestParam("reciever") String reciever) {
+
+        try {
+            List<Message> l, k = new ArrayList<>();
+            l = service.findBySenderAndReciever(sender, reciever);
+
+            for (Message m : l
+                 ) {
+                k.add(crypter.decryptMessage(m, reciever));
+
+            }
+            return k;
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
+
     }
 
     @RequestMapping(value="/countAll", method = RequestMethod.GET, produces = "application/json;charset:utf-8")

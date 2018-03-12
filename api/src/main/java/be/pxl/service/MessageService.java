@@ -46,4 +46,9 @@ public class MessageService implements IMessageService{
     public int countAll() {
         return repo.countAll();
     }
+
+    @Override
+    public List<Message> findBySenderAndReciever(String sender, String reciever) {
+        return repo.findBySenderAndReciever(sender, reciever);
+    }
 }
