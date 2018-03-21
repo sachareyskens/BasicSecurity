@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41362883-ffac-46af-9f1f-4fdd0aa8e45c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/frontend/AddUserPage.xaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/frontend/AddUserPage.xaml.cs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/repository/MessageRepository.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/repository/MessageRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/service/IMessageService.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/service/IMessageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/Models/Message.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/Models/Message.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/frontend.csproj" afterPath="$PROJECT_DIR$/../frontend/frontend/frontend.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/packages.config" afterPath="$PROJECT_DIR$/../frontend/frontend/packages.config" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,14 +39,41 @@
       <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+                <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
+                <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
+                <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -54,7 +92,7 @@
       <file leaf-file-name="Crypter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/crypter/Crypter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="1615">
               <caret line="104" column="111" lean-forward="false" selection-start-line="104" selection-start-column="103" selection-end-line="104" selection-end-column="111" />
               <folding />
             </state>
@@ -71,21 +109,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+            <state relative-caret-position="204">
+              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+            <state relative-caret-position="203">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,7 +152,7 @@
       <file leaf-file-name="MessageService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="544">
               <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
               <folding />
             </state>
@@ -155,13 +193,14 @@
       <find>e.pri</find>
       <find>e.getMessage()</find>
       <find>username</find>
+      <find>LocalDateTime</find>
     </findStrings>
     <replaceStrings>
       <replace>Message</replace>
       <replace>reciever</replace>
-      <replace>String</replace>
       <replace>message</replace>
       <replace>&quot;Error encrypting/decrypting. Contact provider&quot;</replace>
+      <replace>String</replace>
     </replaceStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -214,12 +253,12 @@
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/crypter/Crypter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/repository/MessageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/IMessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -260,8 +299,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -379,8 +416,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -543,12 +582,13 @@
       <workItem from="1520592380207" duration="4622000" />
       <workItem from="1520600117075" duration="4086000" />
       <workItem from="1520759626871" duration="4854000" />
-      <workItem from="1520887351667" duration="937000" />
+      <workItem from="1520887351667" duration="1635000" />
+      <workItem from="1521631173241" duration="2540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83242000" />
+    <option name="totallyTimeSpent" value="86480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
@@ -628,11 +668,38 @@
         <state relative-caret-position="255">
           <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -649,12 +716,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding>
-            <element signature="e#857#858#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
-            <element signature="e#952#953#0" expanded="false" />
-            <element signature="e#990#991#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -879,8 +941,8 @@
         <state relative-caret-position="442">
           <caret line="32" column="42" lean-forward="false" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,7 +960,7 @@
         <state relative-caret-position="153">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -927,28 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/repository/MessageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -967,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="544">
           <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
           <folding />
         </state>
@@ -975,16 +1015,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/crypter/Crypter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="1615">
           <caret line="104" column="111" lean-forward="false" selection-start-line="104" selection-start-column="103" selection-end-line="104" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
+            <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
+            <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+        <state relative-caret-position="203">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -57,15 +57,12 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
                 case 3:
-                    scherm.displayFrame.Source = new Uri("AddUserPage.xaml", UriKind.Relative);
-                    break;
-                case 4:
                     scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
-                case 5:
+                case 4:
                     scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
                     break;
-                case 6:
+                case 5:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -111,6 +108,7 @@ namespace frontend
                     message.sender = Sender.username;
                     message.validation = "";
                     message.signature = new Byte[1];
+                    message.date = DateTime.Now.ToString();
                     message.encryptedSymm = new Byte[1];
                    
 

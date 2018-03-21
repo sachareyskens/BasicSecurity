@@ -6,15 +6,17 @@
         xmlns:local="clr-namespace:frontend"
         mc:Ignorable="d"
         Title="Login" Height="500" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
-    <Grid Background="Black">
+    <Grid Background="LightGray">
         
-        <Border Width="350" Height="250" CornerRadius="20" BorderBrush="Blue" BorderThickness="2" Background="White"/>
-        <TextBox x:Name="emailBox" Text="E-mailadres" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,160,0,0" BorderThickness="2" BorderBrush="Black"/>
-        <PasswordBox x:Name="passwordBox" FontSize="16" Padding="5,2,0,0" Width="260" Height="30" VerticalAlignment="Top" Margin="0,210,0,0" BorderThickness="2" BorderBrush="Black"/>
-        <TextBox x:Name="passwordTextBox" Text="Paswoord" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,210,0,0" BorderThickness="2" BorderBrush="Black" Visibility="Visible"/>
+        <Border Width="350" Height="270" CornerRadius="20" BorderBrush="Blue" BorderThickness="2" Background="White"/>
+        <TextBox x:Name="emailBox" Text="E-mailadres" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,150,0,0" BorderThickness="2" BorderBrush="Black"/>
+        <PasswordBox x:Name="passwordBox" FontSize="16" Padding="5,2,0,0" Width="260" Height="30" VerticalAlignment="Top" Margin="0,200,0,0" BorderThickness="2" BorderBrush="Black"/>
+        <TextBox x:Name="passwordTextBox" Text="Paswoord" FontSize="16" Padding="5,2,0,0" Foreground="LightGray" Width="260" Height="30" VerticalAlignment="Top" Margin="0,200,0,0" BorderThickness="2" BorderBrush="Black" Visibility="Visible"/>
         <Label x:Name="errorBox" Content="" FontSize="13" Padding="5,2,0,0" Foreground="Red" Width="260" Height="45" VerticalAlignment="Top" Margin="0,245,0,0" Visibility="Visible"/>
-        <Button x:Name="loginButton" Content="Aanmelden" FontSize="16" Width="260" Height="30" VerticalAlignment="Top" Margin="0,290,0,0" BorderThickness="2" BorderBrush="Black" Background="#FF1AA5ED" Foreground="White" Click="LoginButton_Click"/>
-        <Label x:Name="messageLabel" Content="" Width="200" VerticalAlignment="Top" Margin="0,325,100,0" Foreground="Gray"/>
+        <Button x:Name="loginButton" Content="Aanmelden" FontSize="16" Width="260" Height="30" VerticalAlignment="Top" Margin="0,240,0,0" BorderThickness="2" BorderBrush="Black" Background="#FF1AA5ED" Foreground="White" Click="LoginButton_Click"/>
+        <Button x:Name="registerButton" Content="Registreren" FontSize="16" Width="260" Height="30" VerticalAlignment="Top" Margin="0,280,0,0" BorderThickness="2" BorderBrush="Black" Background="#FF1AA5ED" Foreground="White" Click="registerButton_Click"/>
+        <Button x:Name="ssoButton" Content="SSO" FontSize="16" Width="260" Height="30" VerticalAlignment="Top" Margin="0,320,0,0" BorderThickness="2" BorderBrush="Black" Background="#FF1AA5ED" Foreground="White" Click="ssoButton_Click"/>
+        <Label x:Name="messageLabel" Content="" Width="200" VerticalAlignment="Top" Margin="0,370,100,0" Foreground="Gray"/>
     </Grid>
 </Window>
 

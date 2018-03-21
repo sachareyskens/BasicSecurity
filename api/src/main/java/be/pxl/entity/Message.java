@@ -1,7 +1,7 @@
 package be.pxl.entity;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "messages")
@@ -17,13 +17,13 @@ public class Message {
     @Lob
     private byte[] signature;
     private String validation;
-    private LocalDateTime date;
+    private String date;
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

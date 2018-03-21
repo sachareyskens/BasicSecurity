@@ -234,5 +234,17 @@ namespace frontend
                 loginButton.IsEnabled = true;
             }
         }
+
+        private void registerButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewUserWindow window = new NewUserWindow();
+            window.Show();
+            Close();
+        }
+
+        private void ssoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

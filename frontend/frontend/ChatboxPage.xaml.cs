@@ -35,6 +35,7 @@ namespace frontend
             ServicePointManager.ServerCertificateValidationCallback += (send, certificate, chain, sslPolicyErrors) => { return true; };
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
+            sendMessages.KeyDown += sendMessages_KeyDown;
 
             client.BaseAddress = new Uri("https://localhost:8443");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -43,6 +44,7 @@ namespace frontend
                 "Basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", "basic_security", "2018"))));
             GetAllNames();
+            chatterList.SelectionChanged += ComboBox_SelectionChangedAsync;
         }
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -59,25 +61,34 @@ namespace frontend
                 case 2:
                     scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
+
                 case 3:
-                    scherm.displayFrame.Source = new Uri("AddUserPage.xaml", UriKind.Relative);
-                    break;
-                case 4:
                     scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
-                case 5:
+                case 4:
                     scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
                     break;
-                case 6:
+                case 5:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
             }
         }
-
-        private void Sendbutton_Click(object sender, RoutedEventArgs e)
+        private void sendMessages_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Tab)
+            {
+                Sendbutton.Focus();
+            }
+            else if (e.Key == Key.Enter)
+            {
+                Send();
+            }
+        }
 
+        private void Sendbutton_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            Send();
         }
 
         public async void GetAllNames()
@@ -88,10 +99,50 @@ namespace frontend
             if (response.IsSuccessStatusCode)
             {
                 t = await response.Content.ReadAsAsync<List<String>>();
-
-                senderBox.ItemsSource = t;
+                t.Remove(scherm.GetUser().username);
+                chatterList.ItemsSource = t;
             }
 
+        }
+
+        private async void Send()
+        {
+            if (sendMessages.Text != "" && chatterList.SelectedValue != null)
+            {
+                try
+                {
+                    Sendbutton.IsEnabled = false;
+                    Message message = new Message();
+                    message.receiver = chatterList.SelectedValue.ToString();
+                    message.message = sendMessages.Text;
+                    message.sender = scherm.GetUser().username;
+                    message.validation = "";
+                    message.date = DateTime.Now.ToString();
+                    message.signature = new Byte[1];
+                    message.encryptedSymm = new Byte[1];
+
+
+                    var userUrl = "/api/messages/add";
+                    HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Succesfully sent");
+                        Sendbutton.IsEnabled = true;
+                        txtMessages.AppendText(message.date + " - " + message.sender + ": " + message.message + "\n");
+                    }
+
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Verbinding met de server verbroken. Probeer later opnieuw.",
+                        "Serverfout", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter message/select reciever.");
+            }
         }
 
 
@@ -99,7 +150,7 @@ namespace frontend
         {
             try
             {
-                var userUrl = "/api/messages/decrypt/all?sender=" + senderBox.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
+                var userUrl = "/api/messages/decrypt/all?sender=" + chatterList.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
                 HttpResponseMessage response = await client.GetAsync(userUrl);
                 IEnumerable<Message> t = null;
                 if (response.IsSuccessStatusCode)
@@ -108,8 +159,9 @@ namespace frontend
 
                     foreach (Message m in t)
                     {
-                        txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message);
+                        txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message + "\n");
                     }
+                    txtMessages.ScrollToEnd();
 
                 }
             } catch(Exception ex)

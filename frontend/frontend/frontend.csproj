@@ -66,23 +66,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddUserPage.xaml.cs">
-      <DependentUpon>AddUserPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ChatboxPage.xaml.cs">
       <DependentUpon>ChatboxPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\StatsSource.cs" />
+    <Compile Include="NewUserWindow.xaml.cs">
+      <DependentUpon>NewUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecievedPage.xaml.cs">
       <DependentUpon>RecievedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddUserPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ChatboxPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +116,10 @@
       <DependentUpon>LogoutPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

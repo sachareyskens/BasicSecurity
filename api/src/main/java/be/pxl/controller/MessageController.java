@@ -49,7 +49,7 @@ public class MessageController {
     @RequestMapping(value="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addMessage(@RequestBody Message message) {
 
-        message.setDate(LocalDateTime.now());
+
         service.persist(crypter.encryptMessage(message));
 
     }
