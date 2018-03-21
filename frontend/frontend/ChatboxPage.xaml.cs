@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace frontend
 {
@@ -26,6 +27,10 @@ namespace frontend
     {
         HttpClient client = new HttpClient();
         HomeWindow scherm;
+        DispatcherTimer fetchTimer;
+        int counter;
+        Boolean fetching = false;
+        IEnumerable<Message> checker = new List<Message>();
         public ChatboxPage()
         {
 
@@ -36,7 +41,10 @@ namespace frontend
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
             sendMessages.KeyDown += sendMessages_KeyDown;
-
+            fetchTimer = new DispatcherTimer();
+            fetchTimer.Interval = TimeSpan.FromSeconds(1);
+            fetchTimer.Tick += fetchTimer_Tick;
+            counter = 10;
             client.BaseAddress = new Uri("https://localhost:8443");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -46,10 +54,27 @@ namespace frontend
             GetAllNames();
             chatterList.SelectionChanged += ComboBox_SelectionChangedAsync;
         }
+
+        private void fetchTimer_Tick(object sender, EventArgs e)
+        {
+            if (fetching != false)
+            {
+                counter--;
+                if (counter == 0)
+                {
+                    fetchTimer.Stop();
+                    fetchAllMessages();
+                    counter = 10;
+                    fetchTimer.Start();
+                }
+            }
+            
+        }
+
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = menuBox.SelectedIndex;
-
+            fetchTimer.Stop();
             switch (index)
             {
                 case 0:
@@ -146,7 +171,18 @@ namespace frontend
         }
 
 
-        private async void ComboBox_SelectionChangedAsync(object sender, SelectionChangedEventArgs e)
+        private void ComboBox_SelectionChangedAsync(object sender, SelectionChangedEventArgs e)
+        {
+            if (fetching == false)
+            {
+                fetching = true;
+                fetchTimer.Start();
+            }
+            fetchAllMessages();
+            
+        }
+
+        private async void fetchAllMessages()
         {
             try
             {
@@ -157,14 +193,18 @@ namespace frontend
                 {
                     t = await response.Content.ReadAsAsync<List<Message>>();
 
+                    txtMessages.Clear();
+                   
+
                     foreach (Message m in t)
                     {
                         txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message + "\n");
                     }
                     txtMessages.ScrollToEnd();
-
+                    
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Sorry, failed to fetch any data. You might not have messages from this person.");
             }

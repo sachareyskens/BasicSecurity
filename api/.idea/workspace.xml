@@ -2,28 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41362883-ffac-46af-9f1f-4fdd0aa8e45c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/frontend/AddUserPage.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/frontend/AddUserPage.xaml.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.xaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.xaml.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ChatClient.csproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Commands/RelayCommand.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Commands/RelayCommandAsync.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Enums/MessageType.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Enums/UserModes.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/MainWindow.xaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/MainWindow.xaml.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/ChatMessage.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/Participant.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/User.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/AssemblyInfo.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Resources.Designer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Resources.resx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Settings.Designer.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Settings.settings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/ChatService.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/DialogService.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/IChatService.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/IDialogService.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/BringNewItemIntoViewBehavior.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/ByteBitmapSourceConverter.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/ViewModelLocator.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ViewModels/MainWindowViewModel.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ViewModels/ViewModelBase.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/ChatView.xaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/ChatView.xaml.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/LoginView.xaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/LoginView.xaml.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/packages.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/App.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/ChatServer.csproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/Program.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/Properties/AssemblyInfo.cs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/HomePage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/LoginWindow.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/LogoutPage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/MessagePage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/Models/Message.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/Models/Message.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/RecievedPage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml" afterPath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/SettingsPage.xaml.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/frontend.csproj" afterPath="$PROJECT_DIR$/../frontend/frontend/frontend.csproj" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -109,22 +126,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -257,8 +276,8 @@
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/IMessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
       </list>
     </option>
   </component>
@@ -439,15 +458,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../entmob2016_1/Source/back-end" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\11400982\Desktop\Examens PXL 2018\PE Opdracht Basic Security\api\src\main\java\be\pxl\service" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\11400982\Desktop\Examens PXL 2018\PE Opdracht Basic Security\api\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="be.pxl.entity.logging" />
       <recent name="be.pxl.security" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\11400982\Desktop\Examens PXL 2018\PE Opdracht Basic Security\api\src\main\java\be\pxl\service" />
       <recent name="C:\Users\11400982\Desktop\Examens PXL 2018\PE Opdracht Basic Security\api\src\main\resources" />
     </key>
   </component>
@@ -583,12 +602,12 @@
       <workItem from="1520600117075" duration="4086000" />
       <workItem from="1520759626871" duration="4854000" />
       <workItem from="1520887351667" duration="1635000" />
-      <workItem from="1521631173241" duration="2540000" />
+      <workItem from="1521631173241" duration="6931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86480000" />
+    <option name="totallyTimeSpent" value="90871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
@@ -610,7 +629,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296146" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -636,7 +655,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -747,7 +766,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,19 +1083,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="442">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
