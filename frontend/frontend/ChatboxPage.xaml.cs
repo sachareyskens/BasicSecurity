@@ -31,6 +31,8 @@ namespace frontend
         int counter;
         Boolean fetching = false;
         IEnumerable<Message> checker = new List<Message>();
+        Message checkerMessage = new Message();
+        
         public ChatboxPage()
         {
 
@@ -44,7 +46,7 @@ namespace frontend
             fetchTimer = new DispatcherTimer();
             fetchTimer.Interval = TimeSpan.FromSeconds(1);
             fetchTimer.Tick += fetchTimer_Tick;
-            counter = 10;
+            counter = 8;
             client.BaseAddress = new Uri("https://localhost:8443");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -125,7 +127,13 @@ namespace frontend
             {
                 t = await response.Content.ReadAsAsync<List<String>>();
                 t.Remove(scherm.GetUser().username);
-                chatterList.ItemsSource = t;
+                if (t.Count != 0)
+                {
+                    chatterList.ItemsSource = t;
+                } else
+                {
+                    chatterList.Visibility = Visibility.Collapsed;
+                }
             }
 
         }
@@ -138,6 +146,7 @@ namespace frontend
                 {
                     Sendbutton.IsEnabled = false;
                     Message message = new Message();
+                    message = new Message();
                     message.receiver = chatterList.SelectedValue.ToString();
                     message.message = sendMessages.Text;
                     message.sender = scherm.GetUser().username;
@@ -150,12 +159,12 @@ namespace frontend
                     var userUrl = "/api/messages/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        MessageBox.Show("Succesfully sent");
-                        Sendbutton.IsEnabled = true;
-                        txtMessages.AppendText(message.date + " - " + message.sender + ": " + message.message + "\n");
-                    }
+                    
+                    Sendbutton.IsEnabled = true;
+                    txtMessages.AppendText(message.date + " - " + message.sender + ": " + message.message + "\n");
+                    txtMessages.ScrollToEnd();
+                    sendMessages.Clear();
+                    
 
                 }
                 catch (HttpRequestException)
@@ -188,25 +197,47 @@ namespace frontend
             {
                 var userUrl = "/api/messages/decrypt/all?sender=" + chatterList.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
                 HttpResponseMessage response = await client.GetAsync(userUrl);
-                IEnumerable<Message> t = null;
+                List<Message> t = null;
+                int index = 0;
                 if (response.IsSuccessStatusCode)
                 {
+                    
                     t = await response.Content.ReadAsAsync<List<Message>>();
 
-                    txtMessages.Clear();
+                    
                    
-
-                    foreach (Message m in t)
+                    if (t.Last().id == checkerMessage.id) {
+                        t = null;
+                    } else
                     {
-                        txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message + "\n");
+                        index = t.FindIndex(x => x.id == checkerMessage.id);
+                        if (index != -1)
+                        {
+                            index--;
+                            for (int i = 0; i < index; i++)
+                            {
+                                t.RemoveAt(0);
+                                
+                            }
+                        }
+                        
                     }
-                    txtMessages.ScrollToEnd();
+                    if (t != null)
+                    {
+                        foreach (Message m in t)
+                        {
+                            txtMessages.AppendText(m.date + " - " + m.sender + ": " + m.message + "\n");
+                        }
+                        checkerMessage = t.Last();
+                        txtMessages.ScrollToEnd();
+                    }
                     
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sorry, failed to fetch any data. You might not have messages from this person.");
+                fetchTimer.Stop();
+                MessageBox.Show("Sorry, failed to fetch any data. You might not have messages from this person. Reason : " + ex.Message );
             }
         }
     }

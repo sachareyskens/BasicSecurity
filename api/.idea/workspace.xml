@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41362883-ffac-46af-9f1f-4fdd0aa8e45c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/App.xaml.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ChatClient.csproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Commands/RelayCommand.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Commands/RelayCommandAsync.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Enums/MessageType.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Enums/UserModes.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/MainWindow.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/MainWindow.xaml.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/ChatMessage.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/Participant.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Models/User.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/AssemblyInfo.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Resources.Designer.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Resources.resx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Settings.Designer.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Properties/Settings.settings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/ChatService.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/DialogService.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/IChatService.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Services/IDialogService.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/BringNewItemIntoViewBehavior.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/ByteBitmapSourceConverter.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Utils/ViewModelLocator.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ViewModels/MainWindowViewModel.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/ViewModels/ViewModelBase.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/ChatView.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/ChatView.xaml.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/LoginView.xaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/Views/LoginView.xaml.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatClient/packages.config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/App.config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/ChatServer.csproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/Program.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../frontend/ChatServer/Properties/AssemblyInfo.cs" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" afterPath="$PROJECT_DIR$/../frontend/frontend/ChatboxPage.xaml.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,40 +19,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="e#442#443#0" expanded="true" />
                 <element signature="e#469#470#0" expanded="true" />
-                <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
-                <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
-                <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -126,21 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+            <state relative-caret-position="51">
+              <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -276,8 +208,8 @@
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/IMessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -318,6 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -435,9 +368,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -603,11 +535,12 @@
       <workItem from="1520759626871" duration="4854000" />
       <workItem from="1520887351667" duration="1635000" />
       <workItem from="1521631173241" duration="6931000" />
+      <workItem from="1521703443474" duration="1574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90871000" />
+    <option name="totallyTimeSpent" value="92445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
@@ -629,8 +562,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -689,36 +622,6 @@
           <folding>
             <element signature="e#442#443#0" expanded="true" />
             <element signature="e#469#470#0" expanded="true" />
-            <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1045,59 +948,29 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/entity/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
             <element signature="e#442#443#0" expanded="true" />
             <element signature="e#469#470#0" expanded="true" />
-            <marker date="1521633426345" expanded="false" signature="508:519" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="536:542" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="577:588" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="606:612" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="662:673" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="702:708" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="742:753" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="770:776" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="824:835" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="862:868" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="906:917" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="938:944" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1000:1011" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1046:1052" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1076:1087" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1097:1103" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1134:1145" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1158:1164" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1196:1207" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1222:1228" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1272:1283" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1306:1312" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1343:1354" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1368:1374" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1416:1427" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1448:1454" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1487:1498" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1514:1520" ph=" }" />
-            <marker date="1521633426345" expanded="false" signature="1566:1577" ph=" { " />
-            <marker date="1521633426345" expanded="false" signature="1602:1608" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="51">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/pxl/controller/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
