@@ -63,6 +63,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.3.RELEASE" />

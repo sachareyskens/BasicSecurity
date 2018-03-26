@@ -3,6 +3,7 @@ package be.pxl.service;
 import be.pxl.entity.logging.Log;
 import org.springframework.beans.factory.annotation.Configurable;
 
+
 import java.util.List;
 
 @Configurable

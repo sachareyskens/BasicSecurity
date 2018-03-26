@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private int id;
 
     private String log;
