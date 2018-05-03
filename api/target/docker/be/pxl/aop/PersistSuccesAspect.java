@@ -4,6 +4,7 @@ import be.pxl.entity.Message;
 import be.pxl.entity.logging.JMSMessageLogger;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +24,5 @@ public class PersistSuccesAspect {
     public void encryptMessage(Message message) {
         logger.log("Encrypted Message : " + message.getId() + " || Sender: " + message.getSender());
     }
-
-
 
 }
