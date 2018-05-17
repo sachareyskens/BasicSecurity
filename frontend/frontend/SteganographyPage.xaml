@@ -1,0 +1,97 @@
+﻿<Page x:Class="frontend.SteganographyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:frontend"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="Stegenography">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Background" Value="#FF27272E"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="DarkGray"/>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="DarkRed"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+         
+            
+        </Grid.Resources>
+        <DockPanel>
+            <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
+                <ListBox x:Name="menuBox" HorizontalAlignment="Left" Background="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False">
+                    <ListBoxItem Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="ChatBox (progress)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem IsSelected="True" Content="Steganography" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                </ListBox>
+            </Viewbox>
+
+
+            <StackPanel DockPanel.Dock="Right" Background="WhiteSmoke">
+                <TextBlock Text="Steganography" FontSize="40" Padding="10,5,0,5" Foreground="White">
+                    <TextBlock.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="2.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF144563" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Background>
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="952">
+                    <Grid Height="783" Width="948">
+                        <Border Margin="10,10,477,10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                            <Grid>
+                                <Image HorizontalAlignment="Left" Height="175" Margin="158,84,0,0" VerticalAlignment="Top" Width="175" x:Name="imageEmbed"/>
+                                <Button Content="Select" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="75" Height="23" x:Name="selectImageToEmbedButton" Click="selectImageToEmbedButton_Click"/>
+                                <Button Content="Embed" HorizontalAlignment="Left" Margin="138,544,0,0" VerticalAlignment="Top" Width="120" Height="23" x:Name="embedButton" Click="embedButton_Click" />
+                                <TextBlock HorizontalAlignment="Left" Margin="113,10,0,0" TextWrapping="Wrap" Text="Embed message" VerticalAlignment="Top" FontSize="36" x:Name="titleEmbedTextBlock"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="118,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" x:Name="imageEmbedUrlTextBlock"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="118,352,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" x:Name="fileEmbedUrlTextBlock"/>
+                                <Button Content="File" HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" Width="75" Height="23" x:Name="fileToEmbedButton" Click="fileToEmbedButton_Click"/>
+                                <Button Content="Output Path" HorizontalAlignment="Left" Margin="10,464,0,0" VerticalAlignment="Top" Width="75" Height="23" x:Name="outputPathEmbedButton" Click="outputPathEmbedButton_Click"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="118,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"  x:Name="outputPathEmbedUrlTextBlock" />
+                            </Grid>
+                        </Border>
+                        <Border Margin="476,10,10,10" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                            <Grid>
+                                <Image HorizontalAlignment="Left" Height="175" Margin="145,63,0,0" VerticalAlignment="Top" Width="175" x:Name="imageExtract"/>
+                                <Button Content="Select" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="75" Height="23"  x:Name="selectImageToExtractbutton" Click="selectImageToExtractbutton_Click"/>
+                                <Button Content="Extract" HorizontalAlignment="Left" Margin="145,544,0,0" VerticalAlignment="Top" Width="120" Height="23" x:Name="extractButton" Click="extractButton_Click"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="99,10,0,0" TextWrapping="Wrap" Text="Extract message" VerticalAlignment="Top" FontSize="36" x:Name="titleExtractTextBlock"/>
+                                <Button Content="Output Path" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Width="75" Height="23"  x:Name="outputPathButton" Click="outputPathButton_Click"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="118,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" x:Name="imageExtractUrlTextBlock"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="118,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"  x:Name="outputPathExtractUrlTextBlock" />
+                                <TextBox HorizontalAlignment="Left" Height="23" Margin="145,469,0,0" TextWrapping="Wrap" Text=".txt" VerticalAlignment="Top" Width="120" x:Name="extentionTextBox"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="10,470,0,0" TextWrapping="Wrap" Text="Extention origional file:" VerticalAlignment="Top" x:Name="extentionTextBlock"/>
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </StackPanel>
+                <StackPanel Margin="10,30,10,0">
+                    
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Page>

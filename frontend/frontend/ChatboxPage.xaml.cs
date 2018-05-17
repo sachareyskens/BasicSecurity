@@ -76,7 +76,7 @@ namespace frontend
         private void MenuBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = menuBox.SelectedIndex;
-            fetchTimer.Stop();
+
             switch (index)
             {
                 case 0:
@@ -88,14 +88,16 @@ namespace frontend
                 case 2:
                     scherm.displayFrame.Source = new Uri("RecievedPage.xaml", UriKind.Relative);
                     break;
-
                 case 3:
                     scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
                 case 4:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
                 case 5:
+                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
+                    break;
+                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
