@@ -27,7 +27,7 @@ public class UserController {
     @Autowired
     Crypter crypter;
 
-
+    // Get a single user.
     @RequestMapping(value="/get/{username}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public ResponseEntity<User> getUser(@PathVariable("username") String username) {
         HttpStatus status = HttpStatus.OK;
@@ -36,16 +36,18 @@ public class UserController {
 
         if (user==null) {
             status = HttpStatus.NOT_FOUND;
+        } else {
+
         }
 
         return new ResponseEntity<>(user, status);
     }
-
+    // Show all users.
     @RequestMapping(value="/all", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<User> getAllUsers() {
         return service.All();
     }
-
+    // Add a user and gen a keypair for him.
     @RequestMapping(value ="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Boolean> addUser(@RequestBody User user) throws NoSuchAlgorithmException {
@@ -63,10 +65,10 @@ public class UserController {
         }
 
     }
-
+    // Update a user.
     @RequestMapping(value ="/update", method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateUser(@RequestBody User user) { service.update(user);}
-
+    // Let a user login.
     @RequestMapping(value="/login", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
     public ResponseEntity<User> validateUser(@RequestParam(value="username") String username, @RequestParam(value = "password") String rawPassword) {
@@ -86,6 +88,7 @@ public class UserController {
             }
         }
     }
+    // Validate token of login, in order to do SSO.
     @RequestMapping(value="/validatetoken", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
     public ResponseEntity<Boolean> validateToken(@RequestParam(value="token") String token) {
@@ -101,7 +104,7 @@ public class UserController {
             return new ResponseEntity<Boolean>(false, status);
         }
     }
-
+    // Logout and remove all tokens.
     @RequestMapping(value="/logout", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     @ResponseBody
     public boolean logoutUser(@RequestParam(value="username") String username) {
@@ -110,7 +113,7 @@ public class UserController {
         service.update(user);
         return true;
     }
-
+    // Show all names of all users.
     @RequestMapping(value="/names", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<String> findAllNames() {
         return service.getAllNames();

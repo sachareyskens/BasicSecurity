@@ -1,6 +1,7 @@
 ﻿using frontend.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -242,9 +243,6 @@ namespace frontend
             Close();
         }
 
-        private void ssoButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

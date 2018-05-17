@@ -40,7 +40,7 @@ public class LogController {
     public void updateLog(@RequestBody Log log) {
         service.update(log);
     }
-
+    // Show all logs.
     @RequestMapping(value ="/all", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Log> getAllLogs() {
         return service.All();

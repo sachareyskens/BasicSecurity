@@ -25,12 +25,9 @@ public class MessageController {
     @Autowired
     Crypter crypter;
 
-
-
-
     public static final String BASE_URL = "api/messages";
 
-
+    // Gets a single message.
     @RequestMapping(value= "/get/{id}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public ResponseEntity<Message> getMessage(@PathVariable("id") int key) {
         HttpStatus status = HttpStatus.OK;
@@ -38,11 +35,13 @@ public class MessageController {
 
         return new ResponseEntity<>(message, status);
     }
-
+    // Gets all messages.
     @RequestMapping(value= "/all", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Message> AllMessages() {
         return service.All();
     }
+
+    // Adds a message.
     @RequestMapping(value="/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addMessage(@RequestBody Message message) {
 
@@ -50,12 +49,12 @@ public class MessageController {
         service.persist(crypter.encryptMessage(message));
 
     }
-
+    // Deletes a message
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public void deleteMessage(@PathVariable("id") int id) {
         service.delete(id);
     }
-
+    // Decrypt a message with the crypter class.
     @RequestMapping(value= "/decrypt/{id}", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public ResponseEntity<Message> decrypt(@PathVariable("id") int key, @RequestParam("loggedIn") String username) {
         HttpStatus status = HttpStatus.OK;
@@ -70,11 +69,12 @@ public class MessageController {
         }
 
     }
+    // Show all messages from a certain user to a certain user.
     @RequestMapping(value= "/showall", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Message> showAllByUsername(@RequestParam("username") String username) {
         return service.findByUsername(username);
     }
-
+    // Decrypt all messages from this sender to this reciever.
     @RequestMapping(value= "/decrypt/all", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public List<Message> decryptAll(@RequestParam("sender") String sender, @RequestParam("reciever") String reciever) {
 
@@ -94,7 +94,7 @@ public class MessageController {
         }
 
     }
-
+    // Count total amount of messages and users.
     @RequestMapping(value="/countAll", method = RequestMethod.GET, produces = "application/json;charset:utf-8")
     public ResponseEntity<StatsSource> getCounts() {
         HttpStatus status = HttpStatus.OK;
