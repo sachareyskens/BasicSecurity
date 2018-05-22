@@ -25,6 +25,7 @@ namespace frontend
     /// </summary>
     public partial class LoginWindow : Window
     {
+        
         HttpClient client = new HttpClient();
         HomeWindow homeWindow;
         DispatcherTimer loginTimer;
@@ -50,7 +51,7 @@ namespace frontend
             loginTimer.Interval = TimeSpan.FromSeconds(1);
             loginTimer.Tick += LoginTimer_Tick;
 
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -151,7 +152,7 @@ namespace frontend
 
             try
             {
-                var userUrl = "/api/users/get/" + username;
+                var userUrl = "/basicsec/api/users/get/" + username;
                 HttpResponseMessage response = await client.GetAsync(userUrl);
                 user = await response.Content.ReadAsAsync<User>();
                 
@@ -171,7 +172,7 @@ namespace frontend
         {
             loginButton.IsEnabled = false;
             messageLabel.Content = "Velden controleren...";
-
+           
             User user = await CheckUserAsync(emailBox.Text);
             
 
@@ -180,7 +181,7 @@ namespace frontend
                 
                 try
                 {
-                    var userUrl = "/api/users/login?username=" + emailBox.Text + "&password=" + passwordBox.Password;
+                    var userUrl = "/basicsec/api/users/login?username=" + emailBox.Text + "&password=" + passwordBox.Password;
                     HttpResponseMessage response = await client.GetAsync(userUrl);
 
                     if (response.IsSuccessStatusCode)

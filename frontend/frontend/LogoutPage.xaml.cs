@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Windows;
 using System.Windows.Controls;
+using frontend.Models;
 
 namespace frontend
 {
@@ -21,7 +23,7 @@ namespace frontend
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
 
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -65,10 +67,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+                
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -77,8 +77,9 @@ namespace frontend
 
         private async void Logout()
         {
-            var userUrl = "/api/users/logout?username=" + scherm.GetUser().username;
+            var userUrl = "/basicsec/api/users/logout?username=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
+        
         }
     }
 }

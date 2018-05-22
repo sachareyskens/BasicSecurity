@@ -53,9 +53,8 @@
                     <ListBoxItem IsSelected="True" Content="Home" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Send Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Recieve Message" Foreground="White"  FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="ChatBox (progress)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
+                    <ListBoxItem Content="ChatBox (live)" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Steganography" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
-                    <ListBoxItem Content="Settings" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                     <ListBoxItem Content="Logout" Foreground="White" FontSize="20" FontWeight="Medium" Padding="10,0" Height="87"/>
                 </ListBox>
             </Viewbox>
@@ -79,11 +78,12 @@
                                 <TextBlock x:Name="welcomeBlock" Text="{Binding}"></TextBlock>
                             </TextBlock>
                             <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
-                                <TextBlock x:Name="messBlock" Text="{Binding}"></TextBlock>
-                            </TextBlock>
-                            <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
                                 <TextBlock x:Name="usersBlock" Text="{Binding}"></TextBlock>
                             </TextBlock>
+                            <TextBlock FontSize="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Padding="5,0,5,0">
+                                <TextBlock x:Name="messagesBlock" Text="{Binding}"></TextBlock>
+                            </TextBlock>
+                            
                         </StackPanel>
                     </Border>
                 </StackPanel>

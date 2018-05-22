@@ -120,10 +120,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+                
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 

@@ -43,7 +43,7 @@ namespace frontend
 
             
 
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -65,7 +65,7 @@ namespace frontend
                     user.active = true;
 
 
-                    var userUrl = "/api/users/add";
+                    var userUrl = "/basicsec/api/users/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, user);
 
                     if (response.IsSuccessStatusCode)

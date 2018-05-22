@@ -36,7 +36,7 @@ namespace frontend
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;         
 
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -67,10 +67,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+                
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -79,15 +77,15 @@ namespace frontend
 
         public async void loadData()
         {
-            var userUrl = "/api/messages/countAll";
+            var userUrl = "/basicsec/api/messages/countAll";
             HttpResponseMessage response = await client.GetAsync(userUrl);
 
             if (response.IsSuccessStatusCode)
             {
                 StatsSource s = await response.Content.ReadAsAsync<StatsSource>();
                 welcomeBlock.Text = "Welcome, " + scherm.GetUser().username + "!";
-                messBlock.Text = s.totalMessages;
-                usersBlock.Text = s.totalUsers;
+                messagesBlock.Text = s.totalMessages;
+                usersBlock.Text =  s.totalUsers;
             }
 
         }

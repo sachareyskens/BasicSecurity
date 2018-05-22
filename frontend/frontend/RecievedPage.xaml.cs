@@ -40,7 +40,7 @@ namespace frontend
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
 
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -79,10 +79,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+                
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -91,7 +89,7 @@ namespace frontend
 
         public async void getAllUsers()
         {
-            var userUrl = "/api/messages/showall?username=" + scherm.GetUser().username;
+            var userUrl = "/basicsec/api/messages/showall?username=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
             IEnumerable<Message> t = null;
             if (response.IsSuccessStatusCode)
@@ -130,7 +128,7 @@ namespace frontend
 
         public async void decryptMessage(Message message)
         {
-            var userUrl = "/api/messages/decrypt/" + message.id + "?loggedIn=" + scherm.GetUser().username;
+            var userUrl = "/basicsec/api/messages/decrypt/" + message.id + "?loggedIn=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
             
             if (response.IsSuccessStatusCode)
@@ -148,7 +146,7 @@ namespace frontend
 
         public async void deleteMessage(Message message)
         {
-            var userUrl = "/api/messages/delete/" + message.id;
+            var userUrl = "/basicsec/api/messages/delete/" + message.id;
             HttpResponseMessage response = await client.DeleteAsync(userUrl);
             Message t = null;
             if (response.IsSuccessStatusCode)

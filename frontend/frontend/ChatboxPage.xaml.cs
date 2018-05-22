@@ -47,7 +47,7 @@ namespace frontend
             fetchTimer.Interval = TimeSpan.FromSeconds(1);
             fetchTimer.Tick += fetchTimer_Tick;
             counter = 8;
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -66,7 +66,7 @@ namespace frontend
                 {
                     fetchTimer.Stop();
                     fetchAllMessages();
-                    counter = 10;
+                    counter = 8;
                     fetchTimer.Start();
                 }
             }
@@ -94,10 +94,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+                
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -122,7 +120,7 @@ namespace frontend
 
         public async void GetAllNames()
         {
-            var userUrl = "/api/users/names";
+            var userUrl = "/basicsec/api/users/names";
             HttpResponseMessage response = await client.GetAsync(userUrl);
             List<String> t = null;
             if (response.IsSuccessStatusCode)
@@ -158,7 +156,7 @@ namespace frontend
                     message.encryptedSymm = new Byte[1];
 
 
-                    var userUrl = "/api/messages/add";
+                    var userUrl = "/basicsec/api/messages/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);
 
                     
@@ -197,7 +195,7 @@ namespace frontend
         {
             try
             {
-                var userUrl = "/api/messages/decrypt/all?sender=" + chatterList.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
+                var userUrl = "/basicsec/api/messages/decrypt/all?sender=" + chatterList.SelectedValue.ToString() + "&reciever=" + scherm.GetUser().username;
                 HttpResponseMessage response = await client.GetAsync(userUrl);
                 List<Message> t = null;
                 int index = 0;
@@ -215,7 +213,7 @@ namespace frontend
                         index = t.FindIndex(x => x.id == checkerMessage.id);
                         if (index != -1)
                         {
-                            index--;
+                            index++;
                             for (int i = 0; i < index; i++)
                             {
                                 t.RemoveAt(0);

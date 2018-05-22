@@ -30,7 +30,7 @@ namespace frontend
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls;
             scherm =  (HomeWindow)Application.Current.MainWindow;
-            client.BaseAddress = new Uri("https://localhost:8443");
+            client.BaseAddress = new Uri(Adress.url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
@@ -62,10 +62,8 @@ namespace frontend
                 case 4:
                     scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
                     break;
+               
                 case 5:
-                    scherm.displayFrame.Source = new Uri("SettingsPage.xaml", UriKind.Relative);
-                    break;
-                case 6:
                     scherm.displayFrame.Source = new Uri("LogoutPage.xaml", UriKind.Relative);
                     break;
 
@@ -73,7 +71,7 @@ namespace frontend
         }
         public async void GetAllNames()
         {
-            var userUrl = "/api/users/names";
+            var userUrl = "/basicsec/api/users/names";
             HttpResponseMessage response = await client.GetAsync(userUrl);
             List<String> t = null;
             if (response.IsSuccessStatusCode)
@@ -115,7 +113,7 @@ namespace frontend
                     message.encryptedSymm = new Byte[1];
                    
 
-                    var userUrl = "/api/messages/add";
+                    var userUrl = "/basicsec/api/messages/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);
 
                     if (response.IsSuccessStatusCode)
