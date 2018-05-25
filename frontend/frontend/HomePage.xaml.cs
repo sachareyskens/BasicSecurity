@@ -65,7 +65,7 @@ namespace frontend
                     scherm.displayFrame.Source = new Uri("ChatboxPage.xaml", UriKind.Relative);
                     break;
                 case 4:
-                    scherm.displayFrame.Source = new Uri("StegenographyWindow.xaml", UriKind.Relative);
+                    scherm.displayFrame.Source = new Uri("SteganographyPage.xaml", UriKind.Relative);
                     break;
                 
                 case 5:
@@ -77,7 +77,7 @@ namespace frontend
 
         public async void loadData()
         {
-            var userUrl = "/basicsec/api/messages/countAll";
+            var userUrl = "/api/messages/countAll";
             HttpResponseMessage response = await client.GetAsync(userUrl);
 
             if (response.IsSuccessStatusCode)

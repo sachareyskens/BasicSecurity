@@ -8,6 +8,6 @@ namespace frontend.Models
 {
     public static class Adress
     {
-        public static String url { get { return "http://bramvanvleymen.com:8080/"; } }
+        public static String url { get { return "https://localhost:8443/"; } }
     }
 }

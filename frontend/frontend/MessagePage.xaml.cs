@@ -71,7 +71,7 @@ namespace frontend
         }
         public async void GetAllNames()
         {
-            var userUrl = "/basicsec/api/users/names";
+            var userUrl = "/api/users/names";
             HttpResponseMessage response = await client.GetAsync(userUrl);
             List<String> t = null;
             if (response.IsSuccessStatusCode)
@@ -113,7 +113,7 @@ namespace frontend
                     message.encryptedSymm = new Byte[1];
                    
 
-                    var userUrl = "/basicsec/api/messages/add";
+                    var userUrl = "/api/messages/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, message);
 
                     if (response.IsSuccessStatusCode)

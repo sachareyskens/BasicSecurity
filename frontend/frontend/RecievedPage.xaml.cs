@@ -89,7 +89,7 @@ namespace frontend
 
         public async void getAllUsers()
         {
-            var userUrl = "/basicsec/api/messages/showall?username=" + scherm.GetUser().username;
+            var userUrl = "/api/messages/showall?username=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
             IEnumerable<Message> t = null;
             if (response.IsSuccessStatusCode)
@@ -128,7 +128,7 @@ namespace frontend
 
         public async void decryptMessage(Message message)
         {
-            var userUrl = "/basicsec/api/messages/decrypt/" + message.id + "?loggedIn=" + scherm.GetUser().username;
+            var userUrl = "/api/messages/decrypt/" + message.id + "?loggedIn=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
             
             if (response.IsSuccessStatusCode)
@@ -146,7 +146,7 @@ namespace frontend
 
         public async void deleteMessage(Message message)
         {
-            var userUrl = "/basicsec/api/messages/delete/" + message.id;
+            var userUrl = "/api/messages/delete/" + message.id;
             HttpResponseMessage response = await client.DeleteAsync(userUrl);
             Message t = null;
             if (response.IsSuccessStatusCode)

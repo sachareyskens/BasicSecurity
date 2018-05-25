@@ -152,7 +152,7 @@ namespace frontend
 
             try
             {
-                var userUrl = "/basicsec/api/users/get/" + username;
+                var userUrl = "/api/users/get/" + username;
                 HttpResponseMessage response = await client.GetAsync(userUrl);
                 user = await response.Content.ReadAsAsync<User>();
                 
@@ -181,7 +181,7 @@ namespace frontend
                 
                 try
                 {
-                    var userUrl = "/basicsec/api/users/login?username=" + emailBox.Text + "&password=" + passwordBox.Password;
+                    var userUrl = "/api/users/login?username=" + emailBox.Text + "&password=" + passwordBox.Password;
                     HttpResponseMessage response = await client.GetAsync(userUrl);
 
                     if (response.IsSuccessStatusCode)

@@ -65,7 +65,7 @@ namespace frontend
                     user.active = true;
 
 
-                    var userUrl = "/basicsec/api/users/add";
+                    var userUrl = "/api/users/add";
                     HttpResponseMessage response = await client.PostAsJsonAsync(userUrl, user);
 
                     if (response.IsSuccessStatusCode)

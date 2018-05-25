@@ -77,7 +77,7 @@ namespace frontend
 
         private async void Logout()
         {
-            var userUrl = "/basicsec/api/users/logout?username=" + scherm.GetUser().username;
+            var userUrl = "/api/users/logout?username=" + scherm.GetUser().username;
             HttpResponseMessage response = await client.GetAsync(userUrl);
         
         }
